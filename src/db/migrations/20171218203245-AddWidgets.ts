@@ -25,12 +25,28 @@ export default {
                 },
                 {
                     type: "etherpad",
-                    name: "Etherpad",
+                    name: "Notes",
                     avatarUrl: "/img/avatars/etherpad.png",
                     isEnabled: true,
                     isPublic: true,
                     description: "Collaborate on documents with members of your room.",
                     optionsJson: '{"defaultUrl":"https://scalar.vector.im/etherpad/p/$roomId_$padName"}',
+                },
+                {
+                    type: "whiteboard",
+                    name: "Whiteboard",
+                    avatarUrl: "/img/avatars/whiteboard.png",
+                    isEnabled: true,
+                    isPublic: true,
+                    description: "A whiteboard app embedded in the room.",
+                },
+                {
+                    type: "nextcloud",
+                    name: "RPI-Cloud",
+                    avatarUrl: "/img/avatars/nextcloud.png",
+                    isEnabled: true,
+                    isPublic: true,
+                    description: "Embed a shared nextcloud Folder in the room.",
                 },
                 {
                     type: "googlecalendar",
@@ -59,7 +75,7 @@ export default {
                 {
                     type: "twitch",
                     name: "Twitch Livestream",
-                    isEnabled: true,
+                    isEnabled: false,
                     isPublic: true,
                     avatarUrl: "/img/avatars/twitch.png",
                     description: "Embed a Twitch livestream into your room.",

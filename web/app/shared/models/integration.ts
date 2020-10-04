@@ -88,6 +88,18 @@ export interface FE_JitsiWidget extends FE_Widget {
     };
 }
 
+export interface FE_WhiteBoardWidget extends FE_Widget {
+    options: {
+        defaultUrl: string;
+    };
+}
+/*
+export interface FE_NextcloudWidget extends FE_Widget {
+    options: {
+        defaultUrl: string;
+    };
+}
+*/
 export interface FE_IntegrationRequirement {
     condition: "publicRoom" | "canSendEventTypes" | "userInRoom";
     argument: any;

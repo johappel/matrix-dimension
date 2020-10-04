@@ -47,6 +47,8 @@ import { ManagerTestWidgetWrapperComponent } from "./widget-wrappers/manager-tes
 import { AdminTermsComponent } from "./admin/terms/terms.component";
 import { AdminNewEditTermsComponent } from "./admin/terms/new-edit/new-edit.component";
 import { TermsWidgetWrapperComponent } from "./widget-wrappers/terms/terms.component";
+import { WhiteboardWidgetComponent } from "./configs/widget/whiteboard/whiteboard.widget.component";
+import { NextcloudWidgetComponent } from "./configs/widget/nextcloud/nextcloud.widget.component";
 
 const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -183,7 +185,7 @@ const routes: Routes = [
                     {
                         path: "etherpad",
                         component: EtherpadWidgetConfigComponent,
-                        data: {breadcrumb: "Etherpad Widgets", name: "Etherpad Widgets"},
+                        data: {breadcrumb: "Notes Widgets", name: "Notes Widgets"},
                     },
                     {
                         path: "googlecalendar",
@@ -224,6 +226,16 @@ const routes: Routes = [
                         path: "spotify",
                         component: SpotifyWidgetConfigComponent,
                         data: {breadcrumb: "Spotify Widgets", name: "Spotify Widgets"},
+                    },
+					{
+                        path: "nextcloud",
+                        component: NextcloudWidgetComponent,
+                        data: {breadcrumb: "Nextcloud Widgets", name: "Nextcloud Widgets"},
+                    },
+                    {
+                        path: "whiteboard",
+                        component: WhiteboardWidgetComponent,
+                        data: {breadcrumb: "Whiteboard Widgets", name: "Whiteboard Widgets"},
                     },
                 ],
             },
