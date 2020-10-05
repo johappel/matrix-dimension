@@ -72,7 +72,7 @@ export class IntegrationsRegistry {
             },
             "nextcloud": {
                 type: WIDGET_NEXTCLOUD,
-            }, 
+            }
         },
     };
 

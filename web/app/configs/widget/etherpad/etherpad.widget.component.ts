@@ -18,6 +18,16 @@ export class EtherpadWidgetConfigComponent extends WidgetComponent {
         super(WIDGET_ETHERPAD, "Etherpad", "generic", "etherpad", "padName");
     }
 
+    protected generate_randomstring(length) {
+        let result           = '';
+        const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
     protected OnWidgetsDiscovered(widgets: EditableWidget[]): void {
         console.log(widgets);
         for (const widget of widgets) {
@@ -34,13 +44,14 @@ export class EtherpadWidgetConfigComponent extends WidgetComponent {
     protected OnNewWidgetPrepared(widget: EditableWidget): void {
         const name = this.nameService.getHumanReadableName();
 
-        let template = "https://scalar.vector.im/etherpad/p/$roomId_$padName";
+        const padid = this.generate_randomstring(20);
+
+        let template = "https://scalar.vector.im/etherpad/p/$padName";
         if (this.etherpadWidget.options && this.etherpadWidget.options.defaultUrl) {
             template = this.etherpadWidget.options.defaultUrl;
         }
 
-        template = template.replace("$roomId", encodeURIComponent(SessionStorage.roomId));
-        template = template.replace("$padName", encodeURIComponent(name));
+        template = template.replace("$padName", padid);
 
         widget.dimension.newUrl = template;
         widget.dimension.newName = name;
