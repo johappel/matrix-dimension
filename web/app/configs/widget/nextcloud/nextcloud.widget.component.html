@@ -1,0 +1,25 @@
+<my-widget-config [widgetComponent]="this">
+    <ng-template #widgetParamsTemplate let-widget="widget">
+        <label class="label-block">
+            Bezeichner (Ordnername)
+            <input type="text" class="form-control"
+                   placeholder="{{ defaultName }}"
+                   [(ngModel)]="widget.dimension.newName" name="widget-name-{{widget.id}}"
+                   [disabled]="isUpdating"/>
+        </label>
+        <label class="label-block">
+            Nextcloud Freigabelink
+            <input type="text" class="form-control"
+                   placeholder="https://cloud.rpi-virtuell.de/index.php/s/xyz"
+                   [(ngModel)]="widget.dimension.newUrl" name="widget-url-{{widget.id}}"
+                   [disabled]="isUpdating"/>
+        </label>
+		<label class="label-block">
+            Passwort (falls die Freigabe Passwort geschützt ist)
+            <input type="text" class="form-control"
+                   placeholder="geheim"
+                   [(ngModel)]="widget.dimension.newData.pass" name="widget-pass-{{widget.id}}"
+                   [disabled]="isUpdating"/>
+        </label> 
+    </ng-template>
+</my-widget-config>
